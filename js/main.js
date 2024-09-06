@@ -4,6 +4,8 @@ let reset = document.getElementById("reset");
 let display = document.getElementById("output");
 let PlusChange = document.getElementById("plus-change-btn");
 let MinusChange = document.getElementById("minus-change-btn");
+let PlusReset = document.getElementById("reset-plus-btn");
+let MinusReset = document.getElementById("reset-minus-btn");
 let output = 0;
 let PlusChangeNumber = null;
 let MinusChangeNumber = null;
@@ -83,6 +85,102 @@ reset.addEventListener("click", function() {
     document.body.appendChild(btn1);
     document.body.appendChild(btn2);
 });
+
+PlusReset.addEventListener("click", function() {
+const resetPlusConfirm = document.createElement("p");
+resetPlusConfirm.innerHTML = "<p>Are you really wont to reset the plus number?</p>"
+
+
+const ResetPlusBtn = document.createElement("button");
+ResetPlusBtn.className = "yes";
+ResetPlusBtn.innerHTML = "Yes"
+ResetPlusBtn.addEventListener("click", function() {
+    PlusChangeNumber = 1;
+    console.log(PlusChangeNumber);PlusReset.addEventListener("click", function() {
+        const resetPlusConfirm = document.createElement("p");
+        resetPlusConfirm.innerHTML = "<p>Are you really wont to reset the plus number?</p>"
+        
+        
+        const ResetPlusBtn = document.createElement("button");
+        ResetPlusBtn.className = "yes";
+        ResetPlusBtn.innerHTML = "Yes"
+        ResetPlusBtn.addEventListener("click", function() {
+            PlusChangeNumber = 1;
+            console.log(PlusChangeNumber);
+            resetPlusConfirm.remove();
+            ResetPlusBtn.remove();
+            btn2.remove();
+            });
+        
+            const btn2 = document.createElement("button");
+            btn2.className = "no";
+            btn2.innerHTML = "No";
+            btn2.addEventListener("click", function() {
+                resetPlusConfirm.remove();
+                ResetPlusBtn.remove();
+                btn2.remove();
+        });
+        
+        document.body.appendChild(resetPlusConfirm);
+        document.body.appendChild(ResetPlusBtn);
+        document.body.appendChild(btn2);
+        });
+    resetPlusConfirm.remove();
+    ResetPlusBtn.remove();
+    btn2.remove();
+    });
+
+    const btn2 = document.createElement("button");
+    btn2.className = "no";
+    btn2.innerHTML = "No";
+    btn2.addEventListener("click", function() {
+        resetPlusConfirm.remove();
+        ResetPlusBtn.remove();
+        btn2.remove();
+});
+
+
+
+document.body.appendChild(resetPlusConfirm);
+document.body.appendChild(ResetPlusBtn);
+document.body.appendChild(btn2);
+});
+
+
+
+
+
+MinusReset.addEventListener("click", function() {
+    const resetMinusConfirm = document.createElement("p");
+    resetMinusConfirm.innerHTML = "<p>Are you really wont to reset the minus number?</p>"
+    
+    
+    const ResetMinusBtn = document.createElement("button");
+    ResetMinusBtn.className = "yes";
+    ResetMinusBtn.innerHTML = "Yes"
+    ResetMinusBtn.addEventListener("click", function() {
+        MinusChangeNumber = 1;
+        console.log(MinusChangeNumber);
+        resetMinusConfirm.remove();
+        ResetMinusBtn.remove();
+        btn2.remove();
+        });
+    
+        const btn2 = document.createElement("button");
+        btn2.className = "no";
+        btn2.innerHTML = "No";
+        btn2.addEventListener("click", function() {
+            resetPlusConfirm.remove();
+            ResetPlusBtn.remove();
+            btn2.remove();
+    });
+    
+    document.body.appendChild(resetMinusConfirm);
+    document.body.appendChild(ResetMinusBtn);
+    document.body.appendChild(btn2);
+    });
+
+
 
 
 
