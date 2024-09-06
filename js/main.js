@@ -6,6 +6,7 @@ let PlusChange = document.getElementById("plus-change-btn");
 let MinusChange = document.getElementById("minus-change-btn");
 let PlusReset = document.getElementById("reset-plus-btn");
 let MinusReset = document.getElementById("reset-minus-btn");
+let allreset = document.getElementById("all-number-reset");
 let output = 0;
 let PlusChangeNumber = null;
 let MinusChangeNumber = null;
@@ -178,6 +179,38 @@ MinusReset.addEventListener("click", function() {
     document.body.appendChild(resetMinusConfirm);
     document.body.appendChild(ResetMinusBtn);
     document.body.appendChild(btn2);
+    });
+
+
+
+    allreset.addEventListener("click", function() {
+const alert = document.createElement("p");
+alert.className = "reset-alert";
+alert.innerHTML = "Are you really wont to reset The all of Plus and Minus Numbers";
+
+
+        const ResetAllBtn = document.createElement("button");
+        ResetAllBtn.className = "allreset";
+        ResetAllBtn.innerHTML = "Yes";
+        ResetAllBtn.addEventListener("click", function() {
+            PlusChangeNumber = 1;
+            MinusChangeNumber = 1;
+            alert.remove();
+                DenideResetAll.remove();
+                ResetAllBtn.remove();
+            });
+
+            const DenideResetAll = document.createElement("button");
+            DenideResetAll.className = "reset-denide";
+            DenideResetAll.innerHTML = "No";
+            DenideResetAll.addEventListener("click", function() {
+                alert.remove();
+                DenideResetAll.remove();
+                ResetAllBtn.remove();
+        });
+        document.body.appendChild(alert);
+    document.body.appendChild(ResetAllBtn);
+    document.body.appendChild(DenideResetAll);
     });
 
 
