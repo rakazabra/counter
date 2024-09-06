@@ -1,0 +1,15 @@
+.yes {
+    color: red;
+}
+
+.no {
+    color: green;
+}
+
+.container {
+    display: flex;
+}
+
+#change {
+    margin-left: 80px;
+}
