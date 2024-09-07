@@ -12,9 +12,43 @@ let PlusChangeNumber = null;
 let MinusChangeNumber = null;
 
 
-PlusChange.addEventListener("click", function() {
-    PlusChangeNumber = Number( prompt("What number you wont to change for plus?"));
-    });
+            PlusChange.addEventListener("click", function() {
+            const plchange = document.createElement("input");
+            const plChangeConfirm = document.createElement("button");
+            const PlChangeDenide = document.createElement("button");
+
+            plchange.type = "number";
+            plchange.placeholder = "Give the number";   
+
+            PlChangeDenide.innerHTML = "Denide";
+            plChangeConfirm.innerHTML = "Aplly";
+
+
+            plChangeConfirm.addEventListener("click", function() {
+            const PlusValue = parseInt(plchange.value, 10);
+                    if(!isNaN(PlusValue)) {
+                        PlusChangeNumber = PlusValue;
+                    }
+
+            plchange.remove();
+            plChangeConfirm.remove();
+            PlChangeDenide.remove(); 
+           });
+
+           PlChangeDenide.addEventListener("click", function() {
+            plchange.remove();
+            plChangeConfirm.remove();
+            PlChangeDenide.remove();
+           });
+          
+          
+
+            document.body.appendChild(plchange);
+            document.body.appendChild(plChangeConfirm);
+            document.body.appendChild(PlChangeDenide);
+            });
+
+
 
 plus.addEventListener("click", function() {
     if(PlusChangeNumber === null) {
@@ -33,7 +67,42 @@ display.textContent = `counted: ${output}`;
 });
 
 MinusChange.addEventListener("click", function() {
-    MinusChangeNumber = Number( prompt("What number you wont to change for minus?"));
+    const Mnchange = document.createElement("input");
+    const MnChangeConfirm = document.createElement("button");
+    const MnChangeDenide = document.createElement("button");
+
+    Mnchange.type = "number";
+    Mnchange.placeholder = "Give the number";   
+
+    MnChangeDenide.innerHTML = "Denide";
+    MnChangeConfirm.innerHTML = "Aplly";
+
+
+ 
+
+    MnChangeConfirm.addEventListener("click", function() {
+    const MinusValue = parseInt(Mnchange.value, 10);
+            if(!isNaN(MinusValue)) {
+                MinusChangeNumber = MinusValue;
+                Mnchange.remove();
+                MnChangeConfirm.remove();
+                MnChangeDenide.remove();
+            }
+
+   });
+
+   MnChangeDenide.addEventListener("click", function() {
+    Mnchange.remove();
+    MnChangeConfirm.remove();
+    MnChangeDenide.remove();
+   });
+  
+   document.body.appendChild(Mnchange);
+   document.body.appendChild(MnChangeConfirm);
+   document.body.appendChild(MnChangeDenide);   
+  
+
+   
     });
 
 
